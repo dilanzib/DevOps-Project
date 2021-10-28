@@ -5,7 +5,7 @@ AWS.config.update({region: 'us-east-1'});
 
 // Create publish parameters
 var params = {
-  Message: 'Heyhey, jusy checking if SNS publish message works', 
+  Message: 'Hey, jusy checking if SNS publish message works', 
   TopicArn: 'arn:aws:sns:us-east-1:516155992695:MyBotTopic'
 };
 
