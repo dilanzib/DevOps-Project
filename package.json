@@ -1,0 +1,26 @@
+{
+  "name": "devops-bot-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "message": "node sns_publish.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.7.0",
+    "aws-sdk": "^2.1012.0",
+    "ngrok": "^4.2.2",
+    "node-fetch": "^3.0.0",
+    "yarn": "^1.22.17"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.13"
+  },
+  "description": ""
+}

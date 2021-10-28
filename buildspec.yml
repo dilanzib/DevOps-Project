@@ -6,10 +6,13 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo This is the pre build phase
   build:
     commands:
       - echo Build started
+      - npm install
+      - npm test
+      - npm run message
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo This is the post build phase
