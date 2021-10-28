@@ -69,5 +69,4 @@ app.message(/two-part-joke/, async ({ command, say }) => {
 })();
 
 
-module.exports = app.command;
 //app.listen(3000)
