@@ -6,5 +6,4 @@ function sum(a, b) {
 
 
 
-//Exportera modulen sum
 module.exports = sum;

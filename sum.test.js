@@ -1,4 +1,4 @@
-const sum = require('./sum'); //ta emot sum filen 
+const sum = require('./sum'); 
 
 
 test('Adding 1 + 2 to equal 3', () => { 

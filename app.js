@@ -72,7 +72,7 @@ function work(str) {
   await app.start(process.env.PORT || port);
   server.listen(port);
 
-  console.log("Server listening on: http://localhost:%s", port);
+  //console.log("Server listening on: http://localhost:%s", port);
 })();
 
 module.exports = work;
