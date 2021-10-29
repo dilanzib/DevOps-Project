@@ -1,8 +1,14 @@
 const { App } = require("@slack/bolt");
 require("dotenv").config();
-const express = require('express');
+var http = require('http');
+
 //https://github.com/node-fetch/node-fetch
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+function handleRequest(request, response){
+  response.end('The bot is alive with ngrok');
+}
+var server = http.createServer(handleRequest);
 
 // Initializes your app with your bot token and signing secret
  const app = new App({
@@ -12,14 +18,12 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
   appToken: process.env.A_TOKEN
 }); 
 
-
 app.command("/knowledge", async ({ command, ack, say }) => {
   try 
   {
     await ack();
     say("Write one-part-joke in a sentence, or on it's own to get one part joke.");
     say("Write two-part-joke in a sentence, or on it's own to get a joke with setup and delivery.");
-
   } 
   catch (error) 
   {
@@ -42,11 +46,9 @@ app.command("/knowledge", async ({ command, ack, say }) => {
   }
 });
 
-
 app.message(/two-part-joke/, async ({ command, say }) => {
   try 
   {
-    //say("Yaaay! that command works!");
     const seconInfo= await fetch('https://v2.jokeapi.dev/joke/Programming?type=twopart&safe-mode');
     const twoPart = await seconInfo.json();
     say(twoPart.setup);
@@ -59,14 +61,18 @@ app.message(/two-part-joke/, async ({ command, say }) => {
   }
 });  
 
+function work(str) {
+  console.log(str +  " is working!");
+  return str + " is working!";
+}
 
 (async () => {
   const port = 3000
-  // Start your app
+  // Start the app 
   await app.start(process.env.PORT || port);
-  //await app.start();
-  console.log(`⚡️ Slack bot is running port ${port}!`);
+  server.listen(port);
+
+  console.log("Server listening on: http://localhost:%s", port);
 })();
 
-
-//app.listen(3000)
+module.exports = work;

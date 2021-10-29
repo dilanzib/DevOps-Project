@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "test": "jest",
+    "test": "jest --forceExit",
     "message": "node sns_publish.js"
   },
   "keywords": [],
@@ -13,8 +13,12 @@
   "dependencies": {
     "@slack/bolt": "^3.7.0",
     "aws-sdk": "^2.1012.0",
+    "axios": "^0.24.0",
+    "equest": "0.0.1-security",
+    "express": "^4.17.1",
     "ngrok": "^4.2.2",
     "node-fetch": "^3.0.0",
+    "request": "^2.88.2",
     "yarn": "^1.22.17"
   },
   "devDependencies": {
