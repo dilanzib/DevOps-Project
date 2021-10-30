@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "test": "jest --forceExit",
+    "test": "jest",
     "message": "node sns_publish.js"
   },
   "keywords": [],
