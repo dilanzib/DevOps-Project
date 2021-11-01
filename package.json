@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "test": "jest",
+    "test": "jest --watchAll --detectOpenHandles",
     "message": "node sns_publish.js"
+
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "axios": "^0.24.0",
     "equest": "0.0.1-security",
     "express": "^4.17.1",
+    "import": "0.0.6",
     "ngrok": "^4.2.2",
     "node-fetch": "^3.0.0",
     "request": "^2.88.2",
