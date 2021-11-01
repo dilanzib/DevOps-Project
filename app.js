@@ -19,8 +19,7 @@ function handleRequest(request, response){
 }); 
 
 
-var knowText="Write one-part-joke in a sentence, or on it's own to get one part joke. \n Write two-part-joke in a sentence or on it's own to get a joke with setup and delivery."  
- 
+var knowText="Write one-part-joke in a sentence, or on it's own to get one part joke. \n Write two-part-joke in a sentence or on it's own to get a joke with setup and delivery."; 
 app.command("/knowledge", async ({ command, ack, say }) => {
     try 
     {
@@ -34,11 +33,11 @@ app.command("/knowledge", async ({ command, ack, say }) => {
     }
 }); 
 
-const jokeUrl="https://v2.jokeapi.dev/joke/Programming?type=single&safe-mode"
- app.message(/one-part-joke/, async ({ command, say }) => {
+const jokeUrl="https://v2.jokeapi.dev/joke/Programming?type=single&safe-mode";
+app.message(/one-part-joke/, async ({ command, say }) => {
   try 
   {
-    const info= await fetch(jokeUrl)
+    const info= await fetch(jokeUrl);
     const joke = await info.json();
     say(joke.joke);
     console.log(joke);
@@ -49,7 +48,7 @@ const jokeUrl="https://v2.jokeapi.dev/joke/Programming?type=single&safe-mode"
   }
 });
 
-const twoJokeUrl="https://v2.jokeapi.dev/joke/Programming?type=twopart&safe-mode"
+const twoJokeUrl="https://v2.jokeapi.dev/joke/Programming?type=twopart&safe-mode";
 app.message(/two-part-joke/, async ({ command, say }) => {
   try 
   {
@@ -72,7 +71,7 @@ function work(str) {
 (async () => {
   //const port = 3000
   // Start the app 
- await app.start()//process.env.PORT || port);
+ await app.start();//process.env.PORT || port);
  // server.listen(port);
   //console.log("Server listening on: http://localhost:%s", port);
 })();
