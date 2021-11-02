@@ -9,6 +9,6 @@ test("Is the app working", () => {
     expect(urlMatch).toBe("https://v2.jokeapi.dev/joke/Programming?type=single&safe-mode");
     
     const twoUrlMatch = app.twoJokeUrl;
-    expect(twoUrlMatch).toBe("https://v2.jokeapi.dev/joke/Programming?type=twopart&safe-mode");
-    
+    expect(twoUrlMatch).toBe("https://v2.jokeapi.dev/joke/Programming?type=twopart&safe-mode"); 
+       
 });
