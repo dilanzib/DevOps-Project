@@ -63,21 +63,15 @@ app.message(/two-part-joke/, async ({ command, say }) => {
   }
 });  
 
-function work(str) {
-  console.log(str +  " is working!");
-  return str + " is working!";
-}
 
 (async () => {
   //const port = 3000
-  // Start the app 
- await app.start();//process.env.PORT || port);
- // server.listen(port);
+ await app.start();   //process.env.PORT || port);
+  //server.listen(port);
   //console.log("Server listening on: http://localhost:%s", port);
 })();
 
-//  "test": "jest --watchAll --detectOpenHandles", //för package.json
-module.exports = work;
+// "test": "jest --watchAll --detectOpenHandles", //för package.json
 
 module.exports= {
   jokeUrl: jokeUrl, 

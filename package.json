@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "test": "jest --watchAll --detectOpenHandles",
+    "test": "jest --forceExit",
     "message": "node sns_publish.js"
 
   },
