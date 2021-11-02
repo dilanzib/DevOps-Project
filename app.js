@@ -1,21 +1,22 @@
 const { App } = require("@slack/bolt");
+const { doesNotMatch } = require("assert");
 require("dotenv").config();
 var http = require('http');
 
 //https://github.com/node-fetch/node-fetch
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-function handleRequest(request, response){
+/*function handleRequest(request, response){
   response.end('The bot is alive with ngrok');
 }
-//var server = http.createServer(handleRequest);
+var server = http.createServer(handleRequest);*/
 
 // Initializes your app with your bot token and signing secret
  const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
-  socketMode: true,
-  appToken: process.env.A_TOKEN
+  appToken: process.env.A_TOKEN,
+  socketMode: true
 }); 
 
 
